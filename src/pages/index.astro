@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home | Shabel Lab at UT Southwestern">
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Decoding the Neural Circuits of Behavior</h1>
+            <p>The Shabel Lab at UT Southwestern Medical Center investigates the lateral habenula to understand reward, avoidance, and the biological underpinnings of affective disorders.</p>
+            <div class="hero-actions">
+                <a href="/research" class="btn-primary">Explore Our Research</a>
+                <a href="/publications" class="btn-secondary">Recent Publications</a>
+            </div>
+        </div>
+        <div class="hero-image-placeholder">
+            <span>Featured Lab Image</span>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="mission-text">
+            <h2>Our Mission</h2>
+            <p>Our research focuses on the intersection of stress, synaptic plasticity, and behavior. By mapping the complex inputs and outputs of the lateral habenula, we aim to uncover how the brain adapts to negative outcomes and identify novel therapeutic targets for depression and anxiety.</p>
+        </div>
+    </section>
+
+    <section class="highlights-section">
+        <h2>Latest Updates</h2>
+        <div class="highlights-grid">
+            
+            <div class="highlight-card">
+                <span class="date">May 2026</span>
+                <h3>New Publication</h3>
+                <p>Check out our latest paper on habenula circuit dynamics published in Nature Neuroscience.</p>
+                <a href="/publications">Read Paper &rarr;</a>
+            </div>
+
+            <div class="highlight-card">
+                <span class="date">April 2026</span>
+                <h3>Welcome to the Lab</h3>
+                <p>We are excited to welcome our new cohort of summer research interns to the team!</p>
+                <a href="/team">Meet the Team &rarr;</a>
+            </div>
+
+            <div class="highlight-card">
+                <span class="date">March 2026</span>
+                <h3>Grant Awarded</h3>
+                <p>The lab has received a new NIH R01 grant to study the effects of rapid-acting antidepressants.</p>
+                <a href="/news">Read More &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+</Layout>
+
+<style>
+    /* 1. Hero Section Styling */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    @media (min-width: 768px) {
+        .hero {
+            flex-direction: row;
+            align-items: center;
+            min-height: 60vh;
+        }
+    }
+
+    .hero-content {
+        flex: 1;
+    }
+
+    .hero h1 {
+        color: var(--primary-color);
+        font-size: 3rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        max-width: 90%;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        color: #ffffff;
+    }
+
+    .btn-primary:hover {
+        background-color: #00366b; /* Darker UTSW Blue */
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--bg-page);
+    }
+
+    .hero-image-placeholder {
+        flex: 1;
+        min-height: 400px;
+        background-color: var(--accent-gray);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-weight: bold;
+        opacity: 0.8;
+    }
+
+    /* 2. Mission Section Styling */
+    .mission-section {
+        background-color: #ffffff;
+        padding: 4rem 2rem;
+        border-radius: 8px;
+        text-align: center;
+        margin-bottom: 4rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .mission-text {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .mission-text h2 {
+        color: var(--primary-color);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .mission-text p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+    }
+
+    /* 3. Highlights Grid Styling */
+    .highlights-section h2 {
+        color: var(--primary-color);
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .highlights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .highlight-card {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--primary-color);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+    }
+
+    .highlight-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .highlight-card .date {
+        font-size: 0.85rem;
+        font-weight: bold;
+        color: var(--accent-gray);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .highlight-card h3 {
+        margin: 0.5rem 0;
+        color: var(--text-main);
+    }
+
+    .highlight-card a {
+        display: inline-block;
+        margin-top: 1rem;
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .highlight-card a:hover {
+        text-decoration: underline;
+    }
+</style>

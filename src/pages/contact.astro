@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact | Shabel Lab">
+    <section class="page-header">
+        <h1>Contact Us</h1>
+        <p>Interested in joining the lab or collaborating? We would love to hear from you.</p>
+    </section>
+
+    <section class="contact-container">
+        
+        <!-- Left Column: Contact Information -->
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            
+            <div class="info-block">
+                <h3>Principal Investigator</h3>
+                <p><strong>Dr. Steven Shabel</strong></p>
+                <!-- Standard UTSW email format placeholder -->
+                <p>Email: <a href="mailto:steven.shabel@utsouthwestern.edu">steven.shabel@utsouthwestern.edu</a></p>
+            </div>
+
+            <div class="info-block">
+                <h3>Lab Location</h3>
+                <p>UT Southwestern Medical Center</p>
+                <p>5323 Harry Hines Blvd.</p>
+                <p>Dallas, TX 75390</p>
+            </div>
+
+            <div class="info-block">
+                <h3>Join the Lab</h3>
+                <p>We are always looking for motivated graduate students and postdocs. Please email Dr. Shabel directly with your CV, a brief statement of your research interests, and references.</p>
+            </div>
+        </div>
+
+        <!-- Right Column: Interactive Map -->
+        <div class="map-container">
+            <!-- Google Maps Embed for UT Southwestern -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.076840748154!2d-96.84070288481358!3d32.81673328095982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e9c6c518b2a3f%3A0xb314da5bf7df1826!2sUT%20Southwestern%20Medical%20Center!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Map of UT Southwestern Medical Center">
+            </iframe>
+        </div>
+
+    </section>
+</Layout>
+
+<style>
+    /* 1. Page Header Styling */
+    .page-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .page-header h1 {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+    }
+
+    /* 2. Main Container (CSS Grid for the 2 columns) */
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Defaults to a single stacked column on mobile */
+        gap: 3rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 3rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Switches to a two-column layout on screens wider than a tablet */
+    @media (min-width: 768px) {
+        .contact-container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    /* 3. Contact Information Styling */
+    .contact-info h2 {
+        color: var(--primary-color);
+        margin-top: 0;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .info-block {
+        margin-bottom: 2rem;
+    }
+
+    .info-block h3 {
+        font-size: 1.2rem;
+        color: var(--text-main);
+        margin-bottom: 0.5rem;
+        border-bottom: 2px solid var(--bg-page);
+        padding-bottom: 0.25rem;
+    }
+
+    .info-block p {
+        margin: 0.25rem 0;
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+
+    .info-block strong {
+        color: var(--text-main);
+    }
+
+    .info-block a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .info-block a:hover {
+        text-decoration: underline;
+    }
+
+    /* 4. Map Container Styling */
+    .map-container {
+        min-height: 350px;
+        border-radius: 8px;
+        overflow: hidden; /* This forces the map to respect the rounded corners of the container */
+        border: 2px solid var(--bg-page);
+    }
+</style>

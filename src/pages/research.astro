@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Research | Shabel Lab">
+    <section class="page-header">
+        <h1>Our Research</h1>
+        <p>Exploring the neural circuitry of the lateral habenula and its role in behavior, reward processing, and affective disorders.</p>
+    </section>
+
+    <section class="projects-container">
+        
+        <!-- Project 1 Summary -->
+        <article class="project-card">
+            <!-- Placeholder for a diagram or microscopy image -->
+            <div class="project-image"></div>
+            
+            <div class="project-content">
+                <h2>Lateral Habenula Circuit Mapping</h2>
+                <p>The lateral habenula (LHb) is a critical node in the brain's reward circuitry. Our lab utilizes advanced viral tracing and electrophysiology to map the exact inputs and outputs of the LHb, helping us understand how it communicates with the midbrain dopaminergic and serotonergic systems.</p>
+                <!-- This links to the sub-page we are about to create! -->
+                <a href="/research/circuit-mapping" class="read-more-btn">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Project 2 Summary -->
+        <article class="project-card">
+            <div class="project-image"></div>
+            <div class="project-content">
+                <h2>Behavioral Adaptation and Stress</h2>
+                <p>How does the brain adapt to negative outcomes? We study the synaptic plasticity within the habenula in response to acute and chronic stress, investigating how these changes drive depressive-like behaviors in animal models.</p>
+                <a href="/research/stress-adaptation" class="read-more-btn">Read More &rarr;</a>
+            </div>
+        </article>
+
+    </section>
+</Layout>
+
+<style>
+    .page-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .page-header h1 {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+    }
+
+    .projects-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem; /* Space between each project card */
+    }
+
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* On screens wider than 768px (tablets/desktops), put image and text side-by-side */
+    @media (min-width: 768px) {
+        .project-card {
+            flex-direction: row;
+        }
+    }
+
+    .project-image {
+        flex: 1;
+        min-height: 250px;
+        background-color: var(--accent-gray);
+        opacity: 0.1; /* Temporary placeholder styling */
+    }
+
+    .project-content {
+        flex: 2;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start; /* Keeps the button aligned to the left */
+    }
+
+    .project-content h2 {
+        color: var(--primary-color);
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+
+    .project-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+    }
+
+    .read-more-btn {
+        background-color: var(--primary-color);
+        color: #ffffff;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: background-color 0.2s ease;
+    }
+
+    .read-more-btn:hover {
+        background-color: #00366b; /* A slightly darker shade of UTSW blue for the hover state */
+    }
+</style>

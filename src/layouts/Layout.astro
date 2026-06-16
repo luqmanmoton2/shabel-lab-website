@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Shabel Lab</title>
+	</head>
+	<body>
+        <!-- Header & Navigation -->
+        <header>
+            <nav>
+                <a href="/" class="logo">SHABEL LAB</a>
+                <div class="nav-links">
+                    <a href="/research">Research</a>
+                    <a href="/team">Team</a>
+                    <a href="/publications">Publications</a>
+                    <a href="/news">News</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content-wrapper">
+		    <slot />
+        </main>
+	</body>
+</html>
+
+<style is:global>
+    /* 1. CSS Variables: UTSW Brand Design System */
+    :root {
+        --primary-color: #004c97; /* Official UTSW Blue */
+        --accent-gray: #636466;   /* Official UTSW Gray */
+        --text-main: #1a1a1a;     /* Very dark gray for high-contrast reading */
+        --text-muted: var(--accent-gray); 
+        --bg-page: #f8f9fa;       /* Very light gray/white background */
+        --bg-nav: #ffffff;
+    }
+
+    /* 2. Base Site Styles */
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        line-height: 1.6;
+    }
+
+    .content-wrapper {
+        max-width: 1200px; /* Keeps content from stretching too wide on large screens */
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    /* 3. Navigation Bar Styling */
+    header {
+        background-color: var(--bg-nav);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft drop shadow */
+        position: sticky;
+        top: 0;
+        z-index: 100; /* This forces the header to stay on top of all scrolling content */
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.25rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        text-decoration: none;
+        letter-spacing: 1px;
+    }
+
+    .nav-links a {
+        margin-left: 2rem;
+        text-decoration: none;
+        color: var(--text-main);
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--primary-color); /* Links turn blue when hovered */
+    }
+</style>

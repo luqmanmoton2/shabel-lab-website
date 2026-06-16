@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Publications | Shabel Lab">
+    <section class="page-header">
+        <h1>Publications</h1>
+        <p>A chronological archive of our peer-reviewed research, reviews, and preprints.</p>
+    </section>
+
+    <!-- Publications List Container -->
+    <section class="publications-list">
+        
+        <!-- 2026 Group -->
+        <h2 class="year-header">2026</h2>
+        
+        <article class="publication-item">
+            <h3 class="paper-title">Dynamic routing of aversive signals in the lateral habenula</h3>
+            <!-- Using <strong> to highlight the PI's name in the author list is a common academic practice -->
+            <p class="authors"><strong>Shabel, P.J.</strong>, Doe, J., Smith, J.</p>
+            <p class="journal"><em>Nature Neuroscience</em>. 2026 May; 29(5): 123-135.</p>
+            <div class="pub-links">
+                <!-- Ensure external links open in a new tab securely using target="_blank" and rel="noopener noreferrer" -->
+                <a href="https://pubmed.ncbi.nlm.nih.gov/" class="pub-link" target="_blank" rel="noopener noreferrer">PubMed</a>
+                <a href="https://doi.org/" class="pub-link" target="_blank" rel="noopener noreferrer">DOI</a>
+                <a href="/pdfs/shabel_2026_nature_neuro.pdf" class="pub-link pdf-link" target="_blank">PDF</a>
+            </div>
+        </article>
+
+        <!-- 2025 Group -->
+        <h2 class="year-header">2025</h2>
+
+        <article class="publication-item">
+            <h3 class="paper-title">Synaptic plasticity in the habenular complex following chronic stress</h3>
+            <p class="authors">Doe, J., <strong>Shabel, P.J.</strong></p>
+            <p class="journal"><em>Journal of Neuroscience</em>. 2025 Nov; 45(11): 987-995.</p>
+            <div class="pub-links">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/" class="pub-link" target="_blank" rel="noopener noreferrer">PubMed</a>
+                <a href="https://doi.org/" class="pub-link" target="_blank" rel="noopener noreferrer">DOI</a>
+            </div>
+        </article>
+
+        <article class="publication-item">
+            <h3 class="paper-title">Optogenetic dissection of the basal ganglia-habenula pathway</h3>
+            <p class="authors">Smith, J., <strong>Shabel, P.J.</strong></p>
+            <p class="journal"><em>Cell Reports</em>. 2025 Apr; 31(4): 108112.</p>
+            <div class="pub-links">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/" class="pub-link" target="_blank" rel="noopener noreferrer">PubMed</a>
+                <a href="https://doi.org/" class="pub-link" target="_blank" rel="noopener noreferrer">DOI</a>
+            </div>
+        </article>
+
+    </section>
+</Layout>
+
+<style>
+    /* 1. Page Header Styling */
+    .page-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .page-header h1 {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+    }
+
+    /* 2. Container and Year Headers */
+    .publications-list {
+        max-width: 900px; /* Kept slightly narrower than the main container for optimal reading width */
+        margin: 0 auto;
+    }
+
+    .year-header {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        border-bottom: 2px solid var(--accent-gray);
+        padding-bottom: 0.5rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* This targets the very first year header so it doesn't have a huge gap above it */
+    .year-header:first-of-type {
+        margin-top: 0;
+    }
+
+    /* 3. Individual Publication Cards */
+    .publication-item {
+        background-color: #ffffff;
+        padding: 1.5rem 2rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        border-left: 4px solid transparent;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Hover effect: The left edge turns UTSW blue and the shadow deepens */
+    .publication-item:hover {
+        border-left-color: var(--primary-color);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .paper-title {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.3rem;
+        color: var(--text-main);
+        line-height: 1.4;
+    }
+
+    .authors {
+        margin: 0 0 0.25rem 0;
+        font-size: 1.05rem;
+        color: var(--text-main);
+    }
+
+    .journal {
+        margin: 0 0 1.25rem 0;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+    }
+
+    /* 4. Link Buttons */
+    .pub-links {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap; /* Ensures buttons wrap cleanly on small mobile screens */
+    }
+
+    .pub-link {
+        font-size: 0.85rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.35rem 0.85rem;
+        border: 1px solid var(--primary-color);
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+
+    .pub-link:hover {
+        background-color: var(--primary-color);
+        color: #ffffff;
+    }
+
+    /* Differentiating the PDF link visually */
+    .pdf-link {
+        color: var(--accent-gray);
+        border-color: var(--accent-gray);
+    }
+
+    .pdf-link:hover {
+        background-color: var(--accent-gray);
+        color: #ffffff;
+        border-color: var(--accent-gray);
+    }
+</style>
