@@ -13,23 +13,54 @@ import Layout from '../layouts/Layout.astro';
         <!-- Project 1 Summary -->
         <article class="project-card">
             <!-- Placeholder for a diagram or microscopy image -->
-            <div class="project-image"></div>
+            <div class="project-image">
+                <img src="/images/rawfp.jpg" alt="Microscopy diagram showing neural circuitry of affective bias" />
+            </div>
             
             <div class="project-content">
-                <h2>Lateral Habenula Circuit Mapping</h2>
-                <p>The lateral habenula (LHb) is a critical node in the brain's reward circuitry. Our lab utilizes advanced viral tracing and electrophysiology to map the exact inputs and outputs of the LHb, helping us understand how it communicates with the midbrain dopaminergic and serotonergic systems.</p>
+                <h2>Neural Mechanisms of Affective Bias</h2>
+                <p>We developed a behavioral test for optimism and pessimism in mice and are using it to understand the molecular, synaptic, and circuit signaling mechanisms of affective bias.</p>
                 <!-- This links to the sub-page we are about to create! -->
-                <a href="/research/circuit-mapping" class="read-more-btn">Read More &rarr;</a>
+                <a href="/research/affective-bias" class="read-more-btn">Read More &rarr;</a>
             </div>
         </article>
 
         <!-- Project 2 Summary -->
         <article class="project-card">
-            <div class="project-image"></div>
+            <div class="project-image">
+                <img src="/images/colabelingcover.png" alt="colabeling for synaptic mechanism of reinforcement signals" />
+            </div>
+
             <div class="project-content">
-                <h2>Behavioral Adaptation and Stress</h2>
-                <p>How does the brain adapt to negative outcomes? We study the synaptic plasticity within the habenula in response to acute and chronic stress, investigating how these changes drive depressive-like behaviors in animal models.</p>
-                <a href="/research/stress-adaptation" class="read-more-btn">Read More &rarr;</a>
+                <h2>A Synaptic Mechanism for Creating and Diversifying Reinforcement Signals</h2>
+                <p>We discovered glutamate/GABA co-release in the habenula and found that it is a potential mechanism for creating and diversifying reinforcement signals in the brain.</p>
+                <a href="/research/a-synaptic-mechanism-for-creating-and-diversifying-reinforcement-signals" class="read-more-btn">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Project 3 Summary -->
+        <article class="project-card">
+            <div class="project-image">
+                <img src="/images/gpr151cover.jpg" alt="gpr151 for depression-enriched circuit therapeutic" />
+            </div>
+
+            <div class="project-content">
+                <h2>A Depression-Circuit Enriched GPCR for Targeted Pharmacotherapy</h2>
+                <p>We identified GPR151, an orphan G protein-coupled receptor that is exceptionally enriched in the habenula, as a candidate therapeutic target for inflammation-associated depression.</p>
+                <a href="/research/a-depression-circuit-enriched-GPCR-for-targeted-pharmacotherapy" class="read-more-btn">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Project 4 Summary -->
+        <article class="project-card">
+            <div class="project-image">
+                <img src="/images/MDDCover.png" alt="Microscopy showing green channel cells" />
+            </div>
+
+            <div class="project-content">
+                <h2>The Functional Organization of The Lateral Habenula and its Relationship to MDD (Depression)</h2>
+                <p>We identified GPR151, an orphan G protein-coupled receptor that is exceptionally enriched in the habenula, as a candidate therapeutic target for inflammation-associated depression.</p>
+                <a href="/research/the-functional-organization-of-the-lateral-habenula-and-its-relationship-to-MDD" class="read-more-btn">Read More &rarr;</a>
             </div>
         </article>
 
@@ -85,8 +116,16 @@ import Layout from '../layouts/Layout.astro';
     .project-image {
         flex: 1;
         min-height: 250px;
-        background-color: var(--accent-gray);
-        opacity: 0.1; /* Temporary placeholder styling */
+        /* REMOVED the gray background and opacity */
+        overflow: hidden; /* Keeps the image strictly inside its bounds */
+    }
+
+    /* NEW: Styles the image to perfectly fill the container */
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Acts like a background image: fills the space without squishing */
+        display: block;
     }
 
     .project-content {

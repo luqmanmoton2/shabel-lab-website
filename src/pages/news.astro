@@ -1,33 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { newsUpdates } from '../data/newsData.js'; 
 ---
 
 <Layout title="News | Shabel Lab">
     <section class="page-header">
         <h1>Lab News</h1>
-        <p>The latest updates, announcements, and events from our research team.</p>
+        <p>The latest updates, announcements, and events from our team.</p>
     </section>
 
-    <section class="news-feed">
-        
-        <article class="news-item">
-            <div class="news-date">June 2026</div>
-            <h2>Infrastructure Update: Automated Behavioral Training</h2>
-            <p>We have successfully deployed our new automated behavioral training setup. By linking MATLAB and Bonsai software directly to our fiber photometry equipment, we can now wirelessly control odor and sucrose valves, significantly enhancing the precision of our pessimism-based mouse models.</p>
-        </article>
-
-        <article class="news-item">
-            <div class="news-date">May 2026</div>
-            <h2>Nature Neuroscience Publication</h2>
-            <p>Congratulations to the team on our new publication detailing the dynamic routing of aversive signals in the lateral habenula! The paper highlights our recent findings using advanced circuit mapping techniques. <a href="/publications">View the paper here.</a></p>
-        </article>
-
-        <article class="news-item">
-            <div class="news-date">April 2026</div>
-            <h2>Welcome to the Lab</h2>
-            <p>We are thrilled to welcome our new cohort of undergraduate and graduate researchers for the spring and summer sessions. We are looking forward to a highly productive season of science and discovery!</p>
-        </article>
-
+    <section class="news-list">
+        {newsUpdates.map((item) => (
+            <article class="news-item">
+                <span class="date">{item.date}</span>
+                <h2>{item.title}</h2>
+                <p>{item.snippet}</p>
+                <!-- Only render the link if you actually put a URL in the data file -->
+                {item.link && <a href={item.link} class="read-more">Read More &rarr;</a>}
+            </article>
+        ))}
     </section>
 </Layout>
 
@@ -46,64 +37,64 @@ import Layout from '../layouts/Layout.astro';
 
     .page-header p {
         color: var(--text-muted);
-        max-width: 600px;
-        margin: 0 auto;
         font-size: 1.1rem;
     }
 
-    /* 2. News Feed Layout */
-    .news-feed {
-        max-width: 800px; /* Keeps the reading line length comfortable */
+    /* 2. Container Styling - This is where the gaps happen! */
+    .news-list {
+        max-width: 800px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 2.5rem; /* Space between news items */
+        gap: 2rem; /* Creates the empty space between each card */
     }
 
-    /* 3. Individual News Item Styling */
+    /* 3. Individual Card Styling */
     .news-item {
         background-color: #ffffff;
         padding: 2.5rem;
         border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         border-left: 4px solid var(--primary-color);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .news-item:hover {
-        transform: translateX(5px); /* Slides slightly to the right on hover */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     }
 
-    .news-date {
-        font-size: 0.9rem;
-        font-weight: 700;
+    .date {
+        font-size: 0.85rem;
+        font-weight: bold;
         color: var(--accent-gray);
         text-transform: uppercase;
         letter-spacing: 1px;
+        display: block;
         margin-bottom: 0.75rem;
     }
 
     .news-item h2 {
         margin: 0 0 1rem 0;
-        color: var(--text-main);
-        font-size: 1.6rem;
+        color: var(--primary-color);
+        font-size: 1.5rem;
     }
 
     .news-item p {
-        margin: 0;
         color: var(--text-main);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
         font-size: 1.05rem;
-        line-height: 1.7;
     }
 
-    .news-item a {
+    .read-more {
         color: var(--primary-color);
-        text-decoration: none;
         font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
     }
 
-    .news-item a:hover {
+    .read-more:hover {
         text-decoration: underline;
     }
 </style>

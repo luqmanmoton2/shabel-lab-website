@@ -1,18 +1,22 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Shabel Lab</title>
-	</head>
-	<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Shabel Lab</title>
+    </head>
+    <body>
         <!-- Header & Navigation -->
         <header>
             <nav>
-                <a href="/" class="logo">SHABEL LAB</a>
+                <a href="/" class="logo">
+                    <!-- The image now sits completely flush left -->
+                    <img src="/images/Shabellablogo.png" alt="Shabel Lab Logo" class="nav-logo" />
+                    <span class="logo-text">SHABEL LAB</span>
+                </a>
                 <div class="nav-links">
                     <a href="/research">Research</a>
                     <a href="/team">Team</a>
@@ -25,9 +29,9 @@
 
         <!-- Main Content Area -->
         <main class="content-wrapper">
-		    <slot />
+            <slot />
         </main>
-	</body>
+    </body>
 </html>
 
 <style is:global>
@@ -69,18 +73,32 @@
     nav {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 1.25rem 2rem;
+        /* ZERO GAP FIX: 0 top, 2rem right, 0 bottom, 0 left */
+        padding: 0 2rem 0 0; 
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
     .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .nav-logo {
+        /* Sets the height of the entire nav bar since top/bottom padding is gone */
+        height: 80px; 
+        width: auto;
+        display: block;
+    }
+
+    .logo-text {
         font-size: 1.5rem;
         font-weight: 800;
         color: var(--primary-color);
-        text-decoration: none;
         letter-spacing: 1px;
+        margin-left: 1rem; /* Pushes the text away from the flush image */
     }
 
     .nav-links a {

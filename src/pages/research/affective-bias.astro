@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Neural mechanisms of affective bias | Shabel Lab">
+    <!-- Back Button -->
+    <div class="navigation-aid">
+        <a href="/research" class="back-link">&larr; Back to All Research</a>
+    </div>
+
+    <!-- Deep Dive Content -->
+    <article class="research-detail">
+        <h1>Neural Mechanisms of Affective Bias</h1>
+        
+        <figure class="featured-figure">
+            <img src="/images/GraphsExp1.jpg" alt="Diagram showing GPR151 enrichment in the habenula" class="featured-image" />
+            <figcaption>Fig. 1. A, Fiber photometry of DA->NAc in DAT-cre mice. B, Schematic of the trial types in our task during testing and the frequency that they are followed by sucrose reward. Trials are either odor-only or odor-tone compound trials. “Mid” tones are infrequent, ambiguous tones of intermediate pitch between positive and negative tones. C, The proportion of trial types during testing. Colors as in B. D, Opposite changes in DA->NAc during optimistic and pessimistic trials, which are defined according to anticipatory licking on these trials compared to surrounding odor-only trials. Data from 18 mice. E, Positively asymmetric weighting of outcome signals during pessimistic trials (N=18 mice). F, Method of classifying persistent bias in mice.  Pessimistic mice are mice with pessimistic licking skews. G, Example DA->NAc in a pessimistic mouse. H, Same as G but for an optimistic mouse. I, DA->NAc during ambiguous tones is correlated with licking skew (N= 18 mice). J, Negatively asymmetric weighting of outcome signals in pessimistic mice. **** P<.0001, *** P<.001, ** P = .01.</figcaption>
+        </figure>
+
+        <h2>Project Overview</h2>
+        <p>We developed a novel Pavlovian ambiguous-cue task to measure affective bias in mice (Fig. 1B,C). By combining this behavioral paradigm with observations of dopamine projections to the nucleus accumbens (DA→NAc; Fig. 1A), we successfully identified distinct dopaminergic signatures of “state” (transient) and “trait-like” (persistent) pessimism. Our findings demonstrate that state pessimism is driven by reduced DA→NAc activity during ambiguous cues (Fig. 1D) and compensatory reduced reward omission signals relative to reward consumption signals (Fig. 1E). In contrast, persistent pessimistic bias is sustained by decreased cue-evoked activity (Fig. 1G-I) paired with amplified reward omission signals (Fig. 1J).</p>
+        <p>In this project, our lab seeks to dissect these specific dopaminergic and habenular circuits using state-of-the-art methodology. We aim to determine how chronic stress and distinct populations of LHb neurons modulate these downstream dopamine signals to compute and sustain pessimistic affective states.</p>
+
+        <h2>Methodology</h2>
+        <ul>
+            <li><strong>Behavioral Modeling:</strong> Utilizing a custom Pavlovian ambiguous-cue task (Fig. 1B,C) to accurately measure and differentiate state versus trait-like affective bias in mice.</li>
+            <li><strong>Fiber Photometry:</strong> Recording dynamic dopamine projections to the nucleus accumbens (DA→NAc; Fig. 1A) in real-time during cue presentation, reward consumption, and reward omission.</li>
+            <li><strong>Optogenetics:</strong> Perturbing specific dopaminergic pathways during positive and negative feedback to establish causal relationships in behavioral responses.</li>
+        </ul>
+
+        <h2>Current Objectives</h2>
+        <p>We are currently examining how chronic stress and specific lateral habenula (LHb) neuron types affect both behavior and DA→NAc responses within our task. Furthermore, we plan to use targeted optogenetic perturbation during positive and negative feedback to confirm the causal role these dopamine projections play in the induction and maintenance of affective bias.</p>
+    </article>
+</Layout>
+
+<style>
+    .navigation-aid {
+        margin-bottom: 2rem;
+    }
+
+    .back-link {
+        color: var(--accent-gray);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+        color: var(--primary-color);
+    }
+
+    .research-detail {
+        max-width: 800px; /* Constrains the width to make reading long paragraphs easier on the eyes */
+        margin: 0 auto; /* Centers the article on the page */
+        background-color: #ffffff;
+        padding: 3rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .research-detail h1 {
+        color: var(--primary-color);
+        font-size: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+
+    /* 1. Figure Container */
+    .featured-figure {
+        margin: 0 0 2.5rem 0; /* Removes default browser margin and adds bottom spacing */
+    }
+
+    /* 2. The Actual Image */
+    .featured-image {
+        width: 100%;
+        height: auto; /* Keeps the aspect ratio from stretching */
+        border-radius: 8px;
+        display: block; /* Prevents a tiny gap from appearing below the image */
+    }
+
+    /* 3. The Caption Text */
+    .featured-figure figcaption {
+        margin-top: 0.85rem;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        text-align: center;
+        font-style: normal;
+        line-height: 1.5;
+        padding: 0 1rem; /* Keeps long captions from hitting the very edge of the screen */
+    }
+
+    .research-detail h2 {
+        color: var(--text-main);
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--bg-page);
+        padding-bottom: 0.5rem;
+    }
+
+    .research-detail p {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.7;
+    }
+
+    .research-detail ul {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .research-detail li {
+        margin-bottom: 0.75rem;
+    }
+</style>

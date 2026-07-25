@@ -1,5 +1,140 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// 1. Current Lab Members Data
+const currentMembers = [
+    {
+        id: "steven-shabel",
+        name: "Dr. Steven Shabel",
+        role: "Principal Investigator",
+        bio: "Dr. Shabel was raised in the San Francisco Bay Area. He received his bachelor's degree in biology from the University of California San Diego and Ph.D. in neuroscience from the University of California San Francisco, where he worked with Patricia Janak. For his postdoctoral work, he returned to UCSD, where he worked with Roberto Malinow. Steve started the lab in the Department of Psychiatry at UT Southwestern in 2017.",
+        email: "steven.shabel@utsouthwestern.edu",
+        projects: [],
+        image: "/images/team/shabel.jpg"
+    },
+    {
+        id: "you-hsin-lin",
+        name: "Dr. You-Hsin Lin",
+        role: "Postdoctoral Researcher",
+        bio: "You-Hsin received his bachelor's and master's degree from School of Veterinary Medicine of National Taiwan University. He then spent two years at the Institute of Molecular and Cellular Biology of National Taiwan University investigating translational regulation with single-molecule techniques. He received his Ph.D degree from Nagoya University, elucidating the molecular basis of passive avoidance learning using viral-mediated manipulation of signaling in the nucleus accumbens. As a postdoc, You-Hsin is learning patch-clamp electrophysiology and in vivo imaging  and looks forward to applying what he learns into translational medicine.",
+        email: "you-hsin.lin@utsouthwestern.edu",
+        projects: [
+            "A synaptic mechanism for creating and diversifying reinforcement signals",
+            "A depression-circuit enriched GPCR for targeted pharmacotherapy:",
+            "The Functional Organization of The Lateral Habenula and its Relationship to MDD (Depression)"
+        ],
+        image: "/images/team/youhsin.jpg"
+    },
+    {
+        id: "volodymyr-rybalchenko",
+        name: "Dr. Volodymyr Rybalchenko",
+        role: "Postdoctoral Researcher",
+        bio: "Volod focuses on circuit mapping, electrophysiology, and coordinating advanced experimental protocols to understand behavioral adaptations to stress.",
+        email: "Volodymyr.Rybalchenko@UTSouthwestern.edu>",
+        projects: [
+            "A synaptic mechanism for creating and diversifying reinforcement signals",
+            "A depression-circuit enriched GPCR for targeted pharmacotherapy:",
+        ],
+        image: "/images/team/volod.png"
+    },
+    {
+        id: "ian-nelson",
+        name: "Ian Nelson",
+        role: "Graduate Student",
+        bio: "I'm Ian Nelson, part of the awesome team in Dr. Shabel's lab at UT Southwestern. My journey started in the U.S. Special Forces, where I honed serious skills in discipline and focused, consistent effort—skills I'm now leveraging in neuroscience research. Over the past year, I've conducted over 400 stereotactic surgeries to deliver various viruses to the brain, deeply exploring Alzheimer's research and memory retrieval circuits. I've recently been accepted to UTSW's PhD program in neuroscience, where I'm eager to unravel the neural mechanisms behind stress, habits, and traumatic memories. When I'm not in the lab, you can find me diving into topics like strength training, muscle growth, online income generation, and communication skills, or hitting the gym. I'm also actively learning and applying business skills to help others live their best lives.",
+        email: "ian.nelson@utsouthwestern.edu",
+        projects: [
+            "A synaptic mechanism for creating and diversifying reinforcement signals"
+        ],
+        image: "/images/team/ian.png"
+    },
+    {
+        id: "luqman-moton",
+        name: "Luqman Moton",
+        role: "Research Assistant",
+        bio: "Luqman develops automated behavioral training setups connecting MATLAB and Bonsai software to fiber photometry equipment for pessimism-based mouse models. He also manages genotyping projects for specific lab lines.",
+        email: "luqman.moton@utsouthwestern.edu",
+        projects: [
+            "Neural Mechanisms of Affective Bias",
+            "The Functional Organization of The Lateral Habenula and its Relationship to MDD (Depression)"
+        ],
+        image: "/images/team/luqman.jpg" 
+    },
+    {
+        id: "hailey-arias",
+        name: "Hailey Arias",
+        role: "Research Assistant",
+        bio: "Hailey received her bachelor's degree in Neuroscience, with a minor in Spanish, from Trinity University in San Antonio, TX. She spent her four years there conducting research in an undergrad lab involved in addiction and dopaminergic pathways. She joined the Shabel Lab in 2025 as a research technician and has been focusing on the role of the lateral habenula and GPR-151 in depression-related behavior, reward learning, and downstream effects. Outside of the lab, Hailey enjoys traveling, exploring new restaurants/bars, and shopping.",
+        email: "hailey.arias@utsouthwestern.edu",
+        projects: [
+            "Neural Mechanisms of Affective Bias",
+            "A depression-circuit enriched GPCR for targeted pharmacotherapy"
+        ],
+        image: "/images/team/hailey.jpeg"
+    },
+    {
+        id: "vikram-katari",
+        name: "Vikram Katari",
+        role: "Research Assistant",
+        bio: "Vikram is a member of the Collegium V Honors Program at The University of Texas at Dallas, where he is pursuing a Bachelor of Science in Neuroscience. He joined the Shabel Lab as an undergraduate researcher in 2026 and works closely with Dr. You-Hsin Lin to characterize lateral habenula neurons and investigate their role in reward processing. Through this work, he is developing skills in advanced neuroscience techniques. Vikram hopes to become a physician and contribute to translational neuroscience research. Outside of the lab, he enjoys playing basketball and pickleball, trying new restaurants, and spending time with friends and family.",
+        email: "vikram.katari@utsouthwestern.edu",
+        projects: [
+            "The Functional Organization of The Lateral Habenula and its Relationship to MDD (Depression)"
+        ],
+        image: "/images/team/vikram.jpg"
+    }
+];
+
+// 2. Alumni Data
+const alumniMembers = [
+    { name: "Yash Sharma", formerRole: "Research Assistant (2022-2026)", currentPosition: "XX" },
+    { name: "Srijani Biswas", formerRole: "Graduate Student (2019-2025)", currentPosition: "XX" },
+    { name: "Lupita Rios", formerRole: "Graduate Student (2020-2025) | Research Assistant (2018-2019)", currentPosition: "XX" },
+    { name: "Chris Botanas", formerRole: "Postdoctoral Fellow (2022-2025)", currentPosition: "XX" },
+    { name: "Fizza Jeddy", formerRole: "UTD Intern (2024-2025)", currentPosition: "XX" },
+    { name: "Abdiaziz Abdalla", formerRole: "UTD Intern (2025)", currentPosition: "XX" },
+    { name: "Natalia Rodríguez-Sosa", formerRole: "Graduate Student (2018-2024)", currentPosition: "XX" },
+    { name: "Aiden Geleta", formerRole: "SURF and Amgen Scholor (2024)", currentPosition: "XX" },
+    { name: "Laura Yuan", formerRole: "MD/PhD Student (2021-2023)", currentPosition: "XX" },
+    { name: "Raghav Rajesh", formerRole: "UTD Intern (2022-2023)", currentPosition: "XX" },
+    { name: "Sravya Thotakura", formerRole: "Green Fellow and UTD Intern (2023)", currentPosition: "XX" },
+    { name: "Rohan Jupelly", formerRole: "UTD Intern (2023)", currentPosition: "XX" },
+    { name: "Vishal Narla", formerRole: "UTD Intern (2018-2019)", currentPosition: "XX" },
+    { name: "Alaa Hajeissa", formerRole: "Research Assistant (2019)", currentPosition: "XX" },
+    { name: "Anna Wilson", formerRole: "SURF Intern (2019)", currentPosition: "XX" },
+    { name: "Amy Loriaux", formerRole: "Postdoctoral Fellow (2018)", currentPosition: "XX" },
+    { name: "Daniela Barbosa", formerRole: "SURF Intern (2018)", currentPosition: "XX" },
+    { name: "Nina Bharadwaj", formerRole: "UTD Intern (2018)", currentPosition: "XX" },
+];
+
+// ... your existing currentMembers and alumniMembers arrays ...
+
+// 3. Automatically Group Alumni by Role
+const groupedAlumni = {
+    "Postdoctoral Fellows": [],
+    "MD/PhD Students": [],
+    "Graduate Students": [],
+    "Research Assistants": [],
+    "Undergraduates & Interns": [] // This will act as the catch-all for UTD/SURF/Amgen
+};
+
+alumniMembers.forEach((alumni) => {
+    // Convert to lowercase so we don't have to worry about capitalization
+    const role = alumni.formerRole.toLowerCase();
+    
+    if (role.includes("postdoc")) {
+        groupedAlumni["Postdoctoral Fellows"].push(alumni);
+    } else if (role.includes("md/phd student")) {
+        groupedAlumni["MD/PhD Students"].push(alumni);
+    } else if (role.includes("graduate student")) {
+        groupedAlumni["Graduate Students"].push(alumni);
+    } else if (role.includes("research assistant")) {
+        groupedAlumni["Research Assistants"].push(alumni);
+    } else {
+        // Anyone else automatically goes into this final group
+        groupedAlumni["Undergraduates & Interns"].push(alumni);
+    }
+});
 ---
 
 <Layout title="Team | Shabel Lab">
@@ -8,42 +143,93 @@ import Layout from '../layouts/Layout.astro';
         <p>The Shabel Lab is driven by a passionate group of researchers, postdocs, and students dedicated to understanding the lateral habenula.</p>
     </section>
 
-    <!-- Team Roster Grid -->
-    <section class="team-grid">
-        
-        <!-- Member 1: Principal Investigator -->
-        <div class="member-card">
-            <!-- We will replace this div with an actual <img> tag later -->
-            <div class="image-placeholder"></div> 
-            <h2>Dr. Steven Shabel</h2>
-            <p class="role">Principal Investigator</p>
-            <p class="bio">Brief bio about Dr. Shabel's background, research focus, and academic history goes right here.</p>
-            <a href="mailto:placeholder@utsouthwestern.edu" class="email-link">Email</a>
+    <section class="team-section">
+        <h2 class="section-title">Current Members</h2>
+        <div class="team-grid">
+            {currentMembers.map((member) => (
+                <div class="member-card" data-modal-target={member.id}>
+                    {member.image ? (
+                        <img src={member.image} alt={`Headshot of ${member.name}`} class="profile-img card-img" />
+                    ) : (
+                        <div class="image-placeholder card-img"></div>
+                    )} 
+                    <h3>{member.name}</h3>
+                    <p class="role">{member.role}</p>
+                    <div class="click-hint">Click to read more</div>
+                </div>
+            ))}
         </div>
-
-        <!-- Member 2: Example Postdoc -->
-        <div class="member-card">
-            <div class="image-placeholder"></div>
-            <h2>You-Hsin Lin, Ph.D.</h2>
-            <p class="role">Postdoctoral Researcher</p>
-            <p class="bio">Jane focuses on circuit mapping and electrophysiology to understand behavioral adaptations.</p>
-            <a href="mailto:placeholder@utsouthwestern.edu" class="email-link">Email</a>
-        </div>
-
-        <!-- Member 3: Example Grad Student -->
-        <div class="member-card">
-            <div class="image-placeholder"></div>
-            <h2>Ian Nelson</h2>
-            <p class="role">Graduate Student</p>
-            <p class="bio">John is investigating the molecular mechanisms underlying reward processing.</p>
-            <a href="mailto:placeholder@utsouthwestern.edu" class="email-link">Email</a>
-        </div>
-
     </section>
+
+    <section class="alumni-section">
+        <h2 class="section-title">Lab Alumni</h2>
+        
+        <!-- Loop through our newly sorted groups -->
+        {Object.entries(groupedAlumni).map(([groupName, members]) => {
+            
+            // If a group is empty, skip it completely
+            if (members.length === 0) return null;
+            
+            return (
+                <div class="alumni-group">
+                    <h3 class="group-heading">{groupName}</h3>
+                    <div class="alumni-directory">
+                        
+                        <!-- Map through the members of this specific group -->
+                        {members.map((alumni) => (
+                            <div class="alumni-entry">
+                                <h4>{alumni.name}</h4>
+                                <p class="former-role">{alumni.formerRole}</p>
+                                <!-- <p class="current-position"><em>Currently:</em> {alumni.currentPosition}</p> -->
+                            </div>
+                        ))}
+
+                    </div>
+                </div>
+            )
+        })}
+    </section>
+
+    {currentMembers.map((member) => (
+        <dialog id={member.id} class="member-modal">
+            <div class="modal-content">
+                <button class="close-btn" data-modal-close={member.id}>&times;</button>
+                
+                <div class="modal-header">
+                    {member.image ? (
+                        <img src={member.image} alt={`Headshot of ${member.name}`} class="profile-img modal-image" />
+                    ) : (
+                        <div class="image-placeholder modal-image"></div>
+                    )}
+                    <div class="modal-title-group">
+                        <h2>{member.name}</h2>
+                        <p class="role">{member.role}</p>
+                        <a href={`mailto:${member.email}`} class="email-link">Email</a>
+                    </div>
+                </div>
+
+                <div class="modal-body">
+                    <h3>About</h3>
+                    <p>{member.bio}</p>
+                    
+                    {member.projects.length > 0 && (
+                        <div class="modal-projects">
+                            <h3>Current Projects</h3>
+                            <ul>
+                                {member.projects.map((pub) => (
+                                    <li>{pub}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </dialog>
+    ))}
 </Layout>
 
 <style>
-    /* Page Header Styling */
+    /* Page Header */
     .page-header {
         text-align: center;
         margin-bottom: 4rem;
@@ -62,41 +248,92 @@ import Layout from '../layouts/Layout.astro';
         font-size: 1.1rem;
     }
 
-    /* CSS Grid for the Team Cards */
+    .section-title {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        border-bottom: 2px solid var(--accent-gray);
+        padding-bottom: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Current Members Grid & Cards */
+    /* Current Members Grid & Cards */
+    .team-section {
+        margin-bottom: 5rem;
+    }
+
     .team-grid {
-        display: grid;
-        /* This line makes it responsive automatically! */
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        /* CHANGED: Switched from grid to flex to easily center orphaned cards */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 2rem;
     }
 
-    /* Individual Card Styling */
     .member-card {
+        /* NEW: This tells the card to grow to fill space, but never get wider than 350px */
+        flex: 1 1 280px;
+        max-width: 350px; 
+        
+        /* Your exact existing styles below */
         background-color: #ffffff;
         padding: 2rem;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         text-align: center;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        border: 2px solid transparent;
     }
 
-    /* Subtle hover effect so the card lifts up slightly */
     .member-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        border-color: var(--primary-color);
     }
 
-    /* Temporary Image Placeholder */
+    .click-hint {
+        font-size: 0.8rem;
+        color: var(--primary-color);
+        margin-top: 1rem;
+        font-weight: 600;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .member-card:hover .click-hint {
+        opacity: 1;
+    }
+
+    /* The fallback gray circle if someone doesn't have a photo yet */
     .image-placeholder {
+        background-color: var(--accent-gray);
+        opacity: 0.2;
+    }
+
+    /* Makes the actual photos perfectly round without squishing them */
+    .profile-img {
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Both placeholders and photos share these dimensions on the main grid */
+    .card-img, .profile-img.card-img {
         width: 150px;
         height: 150px;
-        background-color: var(--accent-gray);
-        border-radius: 50%; /* Makes it a perfect circle */
+        border-radius: 50%;
         margin: 0 auto 1.5rem auto;
-        opacity: 0.2; /* Keeps it subtle until we add real photos */
     }
 
-    .member-card h2 {
+    /* Modal image dimensions */
+    .modal-image {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+        border-radius: 50%;
+    }
+
+    .member-card h3 {
         margin: 0;
         font-size: 1.4rem;
         color: var(--primary-color);
@@ -106,31 +343,206 @@ import Layout from '../layouts/Layout.astro';
         font-weight: 600;
         color: var(--accent-gray);
         margin-top: 0.2rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
         text-transform: uppercase;
         font-size: 0.85rem;
         letter-spacing: 0.5px;
     }
 
-    .bio {
-        font-size: 0.95rem;
+    /* Alumni Grid & Cards */
+    /* Clean, multi-column text directory */
+    .alumni-directory {
+        display: grid;
+        /* Drops the width requirement so we can fit 3 or 4 columns on large screens */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+        gap: 1.5rem 2rem; /* 1.5rem vertical spacing, 2rem horizontal spacing */
+    }
+
+    .alumni-entry {
+        /* No background, no padding, no borders. Just clean text. */
+        padding-bottom: 0.5rem;
+    }
+
+    .alumni-entry h4 {
+        margin: 0 0 0.2rem 0;
+        font-size: 1.1rem;
+        color: var(--primary-color); /* UTSW Blue makes the names pop without needing a box */
+    }
+
+    .alumni-entry .former-role {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--text-main);
+    }
+
+    .alumni-card h4 {
+        margin: 0 0 0.25rem 0;
+        font-size: 1.1rem;
+        color: var(--text-main);
+    }
+    
+    /* Alumni Grouping Styles */
+    .alumni-group {
+        margin-bottom: 3rem; /* Creates space between the different role sections */
+    }
+
+    .group-heading {
+        color: var(--text-main);
+        font-size: 1.25rem;
+        margin-top: 0;
         margin-bottom: 1.5rem;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 0.5rem;
+    }
+
+    .former-role {
+        margin: 0 0 0.5rem 0;
+        font-size: 0.85rem;
+        color: var(--accent-gray);
+        font-weight: 600;
+    }
+
+    .current-position {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--text-main);
+    }
+
+    /* Modal (Pop-up) Styling */
+    .member-modal {
+        border: none;
+        border-radius: 12px;
+        padding: 0;
+        width: 90%;
+        max-width: 650px;
+        background-color: #ffffff;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .member-modal::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+    }
+
+    .modal-content {
+        padding: 2.5rem;
+        position: relative;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .close-btn:hover {
+        color: var(--primary-color);
+    }
+
+    .modal-header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .modal-image {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+    }
+
+    .modal-title-group h2 {
+        font-size: 1.8rem;
+        margin: 0;
+        color: var(--primary-color);
+    }
+
+    .modal-title-group .role {
+        margin-bottom: 1rem;
     }
 
     .email-link {
         display: inline-block;
-        padding: 0.5rem 1.5rem;
-        background-color: var(--bg-page);
-        color: var(--primary-color);
+        padding: 0.4rem 1rem;
+        background-color: var(--primary-color);
+        color: #ffffff;
         text-decoration: none;
         border-radius: 4px;
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         transition: background-color 0.2s ease;
     }
 
     .email-link:hover {
-        background-color: var(--primary-color);
-        color: #ffffff;
+        background-color: #00366b;
+    }
+
+    .modal-body h3 {
+        color: var(--text-main);
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .modal-body p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .modal-projects ul {
+        padding-left: 1.5rem;
+        margin: 0;
+    }
+
+    .modal-projects li {
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        color: var(--text-muted);
     }
 </style>
+
+<script>
+    const cards = document.querySelectorAll('.member-card');
+    const closeBtns = document.querySelectorAll('.close-btn');
+    const modals = document.querySelectorAll('.member-modal');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const targetId = card.getAttribute('data-modal-target');
+            const targetModal = document.getElementById(targetId) as HTMLDialogElement;
+            if (targetModal) targetModal.showModal();
+        });
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-modal-close');
+            const targetModal = document.getElementById(targetId) as HTMLDialogElement;
+            if (targetModal) targetModal.close();
+        });
+    });
+
+    modals.forEach(modal => {
+        // We added ": MouseEvent" right here!
+        modal.addEventListener('click', (e: MouseEvent) => {
+            const dialogDimensions = modal.getBoundingClientRect();
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                (modal as HTMLDialogElement).close();
+            }
+        });
+    });
+</script>

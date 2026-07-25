@@ -24,8 +24,8 @@ import Layout from '../layouts/Layout.astro';
             <div class="info-block">
                 <h3>Lab Location</h3>
                 <p>UT Southwestern Medical Center</p>
-                <p>5323 Harry Hines Blvd.</p>
-                <p>Dallas, TX 75390</p>
+                <p>2201 Inwood Rd.</p>
+                <p>Dallas, TX 75235</p>
             </div>
 
             <div class="info-block">
@@ -34,19 +34,28 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </div>
 
-        <!-- Right Column: Interactive Map -->
-        <div class="map-container">
+        <!-- Right Column: Maps -->
+        <div class="maps-column">
+            
+            <!-- Static Campus Map Image -->
+            <div class="map-container image-container">
+                <img src="/images/NorthCamplook.png" alt="UT Southwestern North Campus Map" class="campus-map-img" />
+            </div>
+
             <!-- Google Maps Embed for UT Southwestern -->
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.076840748154!2d-96.84070288481358!3d32.81673328095982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e9c6c518b2a3f%3A0xb314da5bf7df1826!2sUT%20Southwestern%20Medical%20Center!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Google Map of UT Southwestern Medical Center">
-            </iframe>
+            <div class="map-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=2201%20Inwood%20Rd,%20Dallas,%20TX%2075235&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Google Map of 2201 Inwood Rd, Dallas, TX">
+                </iframe>
+            </div>
+
         </div>
 
     </section>
@@ -132,11 +141,31 @@ import Layout from '../layouts/Layout.astro';
         text-decoration: underline;
     }
 
-    /* 4. Map Container Styling */
+    /* 4. Map Container Layout */
+    .maps-column {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem; /* Creates the space between the image and the Google Map */
+    }
+
     .map-container {
         min-height: 350px;
         border-radius: 8px;
-        overflow: hidden; /* This forces the map to respect the rounded corners of the container */
+        overflow: hidden; 
         border: 2px solid var(--bg-page);
+        display: flex; /* Ensures inner elements stretch correctly */
+    }
+
+    /* Modifies the static image container to be a bit shorter than the Google Map */
+    .image-container {
+        min-height: 250px;
+    }
+
+    /* 5. Map Image Styling */
+    .campus-map-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;
     }
 </style>
