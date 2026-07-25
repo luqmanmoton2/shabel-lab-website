@@ -81,12 +81,19 @@
     nav {
         max-width: 1200px;
         margin: 0 auto;
-        /* ZERO GAP FIX: 0 top, 2rem right, 0 bottom, 0 left */
-        padding: 0 2rem 0 0; 
+        /* Restored padding: 1rem top/bottom, 2rem left/right */
+        padding: 1rem 2rem; 
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
+    }
+
+    .nav-logo {
+        /* Reduced from 80px to make the logo smaller */
+        height: 50px; 
+        width: auto;
+        display: block;
     }
 
     .logo {
@@ -95,12 +102,7 @@
         text-decoration: none;
     }
 
-    .nav-logo {
-        /* Sets the height of the entire nav bar since top/bottom padding is gone */
-        height: 80px; 
-        width: auto;
-        display: block;
-    }
+   
 
     .logo-text {
         font-size: 1.5rem;
@@ -143,14 +145,15 @@
     /* Activates mobile layout on screens smaller than 768px (tablets & phones) */
     @media (max-width: 768px) {
         nav {
-            padding: 0; /* Remove right padding on mobile so button aligns nicely */
+            /* Adds a small cushion on mobile screens */
+            padding: 0.5rem 1rem; 
         }
         
         .hamburger {
-            display: block; /* Show the button */
-            margin-right: 1.5rem;
+            display: block; 
+            margin-right: 0; /* Removed the 1.5rem margin since the nav now has padding */
         }
-
+        
         .nav-links {
             display: none; /* Hide default horizontal menu */
             flex-direction: column;
