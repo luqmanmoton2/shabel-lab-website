@@ -17,7 +17,6 @@ import Layout from '../layouts/Layout.astro';
             <div class="info-block">
                 <h3>Principal Investigator</h3>
                 <p><strong>Steven Shabel</strong></p>
-                <!-- Standard UTSW email format placeholder -->
                 <p>Email: <a href="mailto:steven.shabel@utsouthwestern.edu">steven.shabel@utsouthwestern.edu</a></p>
             </div>
 
@@ -167,5 +166,36 @@ import Layout from '../layouts/Layout.astro';
         height: 100%;
         object-fit: cover; 
         display: block;
+    }
+
+    /* ========================================== */
+    /* 6. MOBILE RESPONSIVENESS FIXES             */
+    /* ========================================== */
+    @media (max-width: 768px) {
+        .page-header {
+            margin-bottom: 2rem;
+        }
+
+        .page-header h1 {
+            font-size: 2rem; /* Scale down the main title */
+        }
+        
+        .contact-container {
+            padding: 1.5rem; /* Cut padding in half to give text more room */
+            gap: 2rem; 
+        }
+
+        .info-block p, .info-block a {
+            word-wrap: break-word; /* Forces the long email address to wrap instead of stretching the screen */
+            overflow-wrap: break-word;
+        }
+
+        .map-container {
+            min-height: 250px; /* Reduces Google map height on mobile */
+        }
+
+        .image-container {
+            min-height: 200px; /* Reduces static image height on mobile */
+        }
     }
 </style>

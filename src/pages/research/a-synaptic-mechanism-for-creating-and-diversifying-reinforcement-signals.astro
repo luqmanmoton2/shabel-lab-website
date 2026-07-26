@@ -116,4 +116,31 @@ import Layout from '../../layouts/Layout.astro';
     .research-detail li {
         margin-bottom: 0.75rem;
     }
+
+    /* ========================================== */
+    /* MOBILE RESPONSIVENESS FIXES                */
+    /* ========================================== */
+    @media (max-width: 768px) {
+        .research-detail {
+            padding: 1.5rem; /* Cut the container padding in half to give text more width */
+        }
+
+        .research-detail h1 {
+            font-size: 1.8rem; /* Scale down the main title so it fits nicely on a narrow screen */
+            margin-bottom: 1.5rem;
+        }
+
+        .research-detail h2 {
+            font-size: 1.35rem; /* Slightly scale down subheadings */
+        }
+
+        .featured-figure figcaption {
+            padding: 0; /* Remove side padding on mobile since the container itself now has less padding */
+            font-size: 0.85rem; /* Slightly shrink caption text to save space */
+        }
+
+        .research-detail p, .research-detail ul {
+            font-size: 1rem; /* Marginally reduce standard text size to improve readability on phones */
+        }
+    }
 </style>

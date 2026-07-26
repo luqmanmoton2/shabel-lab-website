@@ -161,4 +161,33 @@ import Layout from '../layouts/Layout.astro';
     .read-more-btn:hover {
         background-color: #00366b; /* A slightly darker shade of UTSW blue for the hover state */
     }
+
+    /* ========================================== */
+    /* MOBILE RESPONSIVENESS FIXES                */
+    /* ========================================== */
+    @media (max-width: 768px) {
+        .page-header {
+            margin-bottom: 2rem; /* Reduces dead space below the title */
+        }
+
+        .page-header h1 {
+            font-size: 2rem; /* Scales down the title */
+        }
+
+        .projects-container {
+            gap: 1.5rem; /* Reduces the massive gap between stacked project cards */
+        }
+
+        .project-image {
+            min-height: 200px; /* Makes the images slightly shorter so they don't dominate the screen */
+        }
+
+        .project-content {
+            padding: 1.5rem; /* Cuts the padding almost in half so text has room to breathe */
+        }
+
+        .project-content h2 {
+            font-size: 1.4rem; /* Shrinks the project titles so they fit on the screen better */
+        }
+    }
 </style>

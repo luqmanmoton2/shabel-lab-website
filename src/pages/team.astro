@@ -107,8 +107,6 @@ const alumniMembers = [
     { name: "Nina Bharadwaj", formerRole: "UTD Intern (2018)", currentPosition: "XX" },
 ];
 
-// ... your existing currentMembers and alumniMembers arrays ...
-
 // 3. Automatically Group Alumni by Role
 const groupedAlumni = {
     "Postdoctoral Fellows": [],
@@ -256,13 +254,11 @@ alumniMembers.forEach((alumni) => {
     }
 
     /* Current Members Grid & Cards */
-    /* Current Members Grid & Cards */
     .team-section {
         margin-bottom: 5rem;
     }
 
     .team-grid {
-        /* CHANGED: Switched from grid to flex to easily center orphaned cards */
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -270,11 +266,8 @@ alumniMembers.forEach((alumni) => {
     }
 
     .member-card {
-        /* NEW: This tells the card to grow to fill space, but never get wider than 350px */
         flex: 1 1 280px;
         max-width: 350px; 
-        
-        /* Your exact existing styles below */
         background-color: #ffffff;
         padding: 2rem;
         border-radius: 8px;
@@ -304,19 +297,16 @@ alumniMembers.forEach((alumni) => {
         opacity: 1;
     }
 
-    /* The fallback gray circle if someone doesn't have a photo yet */
     .image-placeholder {
         background-color: var(--accent-gray);
         opacity: 0.2;
     }
 
-    /* Makes the actual photos perfectly round without squishing them */
     .profile-img {
         object-fit: cover;
         display: block;
     }
 
-    /* Both placeholders and photos share these dimensions on the main grid */
     .card-img, .profile-img.card-img {
         width: 150px;
         height: 150px;
@@ -324,7 +314,6 @@ alumniMembers.forEach((alumni) => {
         margin: 0 auto 1.5rem auto;
     }
 
-    /* Modal image dimensions */
     .modal-image {
         width: 120px;
         height: 120px;
@@ -349,23 +338,20 @@ alumniMembers.forEach((alumni) => {
     }
 
     /* Alumni Grid & Cards */
-    /* Clean, multi-column text directory */
     .alumni-directory {
         display: grid;
-        /* Drops the width requirement so we can fit 3 or 4 columns on large screens */
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-        gap: 1.5rem 2rem; /* 1.5rem vertical spacing, 2rem horizontal spacing */
+        gap: 1.5rem 2rem; 
     }
 
     .alumni-entry {
-        /* No background, no padding, no borders. Just clean text. */
         padding-bottom: 0.5rem;
     }
 
     .alumni-entry h4 {
         margin: 0 0 0.2rem 0;
         font-size: 1.1rem;
-        color: var(--primary-color); /* UTSW Blue makes the names pop without needing a box */
+        color: var(--primary-color); 
     }
 
     .alumni-entry .former-role {
@@ -374,15 +360,8 @@ alumniMembers.forEach((alumni) => {
         color: var(--text-main);
     }
 
-    .alumni-card h4 {
-        margin: 0 0 0.25rem 0;
-        font-size: 1.1rem;
-        color: var(--text-main);
-    }
-    
-    /* Alumni Grouping Styles */
     .alumni-group {
-        margin-bottom: 3rem; /* Creates space between the different role sections */
+        margin-bottom: 3rem; 
     }
 
     .group-heading {
@@ -399,12 +378,6 @@ alumniMembers.forEach((alumni) => {
         font-size: 0.85rem;
         color: var(--accent-gray);
         font-weight: 600;
-    }
-
-    .current-position {
-        margin: 0;
-        font-size: 0.9rem;
-        color: var(--text-main);
     }
 
     /* Modal (Pop-up) Styling */
@@ -451,12 +424,6 @@ alumniMembers.forEach((alumni) => {
         border-bottom: 2px solid #e2e8f0;
         padding-bottom: 1.5rem;
         margin-bottom: 1.5rem;
-    }
-
-    .modal-image {
-        width: 120px;
-        height: 120px;
-        flex-shrink: 0;
     }
 
     .modal-title-group h2 {
@@ -506,6 +473,50 @@ alumniMembers.forEach((alumni) => {
         margin-bottom: 0.5rem;
         font-size: 0.95rem;
         color: var(--text-muted);
+    }
+
+    /* ========================================== */
+    /* MOBILE RESPONSIVENESS FIXES                */
+    /* ========================================== */
+    @media (max-width: 768px) {
+        .page-header {
+            margin-bottom: 2rem; 
+        }
+
+        .page-header h1 {
+            font-size: 2rem; 
+        }
+
+        .team-section {
+            margin-bottom: 3rem;
+        }
+
+        /* --- Fixes for the Alumni Grid --- */
+        .alumni-directory {
+            /* Forces the alumni list into a single column so text doesn't squish */
+            grid-template-columns: 1fr; 
+            gap: 1rem;
+        }
+
+        /* --- Fixes for the pop-up Modal --- */
+        .member-modal {
+            width: 95%; /* Takes up more of the screen width on a phone */
+        }
+
+        .modal-content {
+            padding: 1.5rem; /* Reduces the huge internal padding */
+        }
+
+        .close-btn {
+            top: 0.5rem;
+            right: 1rem;
+        }
+
+        .modal-header {
+            flex-direction: column; /* Stacks the profile picture on top of the text */
+            text-align: center;
+            gap: 1rem;
+        }
     }
 </style>
 
