@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 const currentMembers = [
     {
         id: "steven-shabel",
-        name: "Dr. Steven Shabel",
+        name: "Steven Shabel",
         role: "Principal Investigator",
         bio: "Dr. Shabel was raised in the San Francisco Bay Area. He received his bachelor's degree in biology from the University of California San Diego and Ph.D. in neuroscience from the University of California San Francisco, where he worked with Patricia Janak. For his postdoctoral work, he returned to UCSD, where he worked with Roberto Malinow. Steve started the lab in the Department of Psychiatry at UT Southwestern in 2017.",
         email: "steven.shabel@utsouthwestern.edu",
@@ -14,7 +14,7 @@ const currentMembers = [
     },
     {
         id: "you-hsin-lin",
-        name: "Dr. You-Hsin Lin",
+        name: "You-Hsin Lin",
         role: "Postdoctoral Researcher",
         bio: "You-Hsin received his bachelor's and master's degree from School of Veterinary Medicine of National Taiwan University. He then spent two years at the Institute of Molecular and Cellular Biology of National Taiwan University investigating translational regulation with single-molecule techniques. He received his Ph.D degree from Nagoya University, elucidating the molecular basis of passive avoidance learning using viral-mediated manipulation of signaling in the nucleus accumbens. As a postdoc, You-Hsin is learning patch-clamp electrophysiology and in vivo imaging  and looks forward to applying what he learns into translational medicine.",
         email: "you-hsin.lin@utsouthwestern.edu",
@@ -27,7 +27,7 @@ const currentMembers = [
     },
     {
         id: "volodymyr-rybalchenko",
-        name: "Dr. Volodymyr Rybalchenko",
+        name: "Volodymyr Rybalchenko",
         role: "Postdoctoral Researcher",
         bio: "Volod focuses on circuit mapping, electrophysiology, and coordinating advanced experimental protocols to understand behavioral adaptations to stress.",
         email: "Volodymyr.Rybalchenko@UTSouthwestern.edu>",
@@ -95,7 +95,7 @@ const alumniMembers = [
     { name: "Abdiaziz Abdalla", formerRole: "UTD Intern (2025)", currentPosition: "XX" },
     { name: "Natalia Rodríguez-Sosa", formerRole: "Graduate Student (2018-2024)", currentPosition: "XX" },
     { name: "Aiden Geleta", formerRole: "SURF and Amgen Scholor (2024)", currentPosition: "XX" },
-    { name: "Laura Yuan", formerRole: "MD/PhD Student (2021-2023)", currentPosition: "XX" },
+    { name: "Laura Yuan", formerRole: "Medical Intern (2021-2023)", currentPosition: "XX" },
     { name: "Raghav Rajesh", formerRole: "UTD Intern (2022-2023)", currentPosition: "XX" },
     { name: "Sravya Thotakura", formerRole: "Green Fellow and UTD Intern (2023)", currentPosition: "XX" },
     { name: "Rohan Jupelly", formerRole: "UTD Intern (2023)", currentPosition: "XX" },
@@ -112,7 +112,7 @@ const alumniMembers = [
 // 3. Automatically Group Alumni by Role
 const groupedAlumni = {
     "Postdoctoral Fellows": [],
-    "MD/PhD Students": [],
+    "Medical Interns": [],
     "Graduate Students": [],
     "Research Assistants": [],
     "Undergraduates & Interns": [] // This will act as the catch-all for UTD/SURF/Amgen
@@ -124,8 +124,8 @@ alumniMembers.forEach((alumni) => {
     
     if (role.includes("postdoc")) {
         groupedAlumni["Postdoctoral Fellows"].push(alumni);
-    } else if (role.includes("md/phd student")) {
-        groupedAlumni["MD/PhD Students"].push(alumni);
+    } else if (role.includes("medical intern")) {
+        groupedAlumni["Medical Interns"].push(alumni);
     } else if (role.includes("graduate student")) {
         groupedAlumni["Graduate Students"].push(alumni);
     } else if (role.includes("research assistant")) {
@@ -140,7 +140,6 @@ alumniMembers.forEach((alumni) => {
 <Layout title="Team | Shabel Lab">
     <section class="page-header">
         <h1>Meet the Team</h1>
-        <p>The Shabel Lab is driven by a passionate group of researchers, postdocs, and students dedicated to understanding the lateral habenula.</p>
     </section>
 
     <section class="team-section">

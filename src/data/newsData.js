@@ -4,31 +4,43 @@ export const newsUpdates = [
     {
         date: "December 5th 2025",
         title: "Lupita Graduates!",
-        snippet: "Congrats Dr. Rios!",
+        snippet: "Congratulations, Dr. Rios, on earning your Ph.D!",
+        link: "/team"
+    },
+    {
+        date: "November 1st 2025",
+        title: "Hailey Joins the Lab!",
+        snippet: "Welcome Hailey!",
         link: "/team"
     },
     {
         date: "October 28th 2025",
         title: "Srijani Graduates!",
-        snippet: "Congrats Dr. Biswas!",
+        snippet: "A new doctor in the lab! Congrats Dr. Biswas!",
+        link: "/team"
+    },
+    {
+        date: "June 1st 2025",
+        title: "Ian Joins the Lab!",
+        snippet: "We are happy to have you!",
         link: "/team"
     },
     {
         date: "April 20th 2024",
         title: "Natalia Graduates!",
-        snippet: "Congrats Dr. Rodriguez-Sosa!",
+        snippet: "Congrats Natalia! Our first student to graduate. We will miss you!",
         link: "/team"
     },
     {
         date: "August 2022",
         title: "Srijani Wins Award at the Three Minute Thesis Competition (3MT)",
-        snippet: "She won 1st place!",
+        snippet: "",
         link: "/news"
     },
     {
         date: "May 2022",
         title: "Srijani wins Award at NGP Poster session",
-        snippet: "She presented a poster talking about the lateral habenula and pessimism",
+        snippet: "",
         link: "/news"
     },
     {
