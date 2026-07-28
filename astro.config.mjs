@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.shabellab.org/'
+  site: 'https://www.shabellab.org/',
   integrations: [sitemap()]
 });
