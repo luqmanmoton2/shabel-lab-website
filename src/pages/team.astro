@@ -133,6 +133,15 @@ alumniMembers.forEach((alumni) => {
         groupedAlumni["Undergraduates & Interns"].push(alumni);
     }
 });
+// 4. is if we are making the alumni into a long list rather than by sections.
+// 4. Flatten the groups into a single array that maintains the hierarchy
+const orderedAlumni = [
+    ...groupedAlumni["Postdoctoral Fellows"],
+    ...groupedAlumni["Medical Interns"],
+    ...groupedAlumni["Graduate Students"],
+    ...groupedAlumni["Research Assistants"],
+    ...groupedAlumni["Undergraduates & Interns"]
+];
 ---
 
 <Layout title="Team | Shabel Lab">
@@ -157,11 +166,26 @@ alumniMembers.forEach((alumni) => {
             ))}
         </div>
     </section>
+    <!--Use this to Make Alumni Section just a long list -->
+   <section class="alumni-section">
+        <h2 class="section-title">Lab Alumni</h2>
+        
+        <!-- Maps through the newly ordered list, keeping the hierarchy without the headers -->
+        <div class="alumni-directory">
+            {orderedAlumni.map((alumni) => (
+                <div class="alumni-entry">
+                    <h4>{alumni.name}</h4>
+                    <p class="former-role">{alumni.formerRole}</p>
+                </div>
+            ))}
+        </div>
+    </section>
 
+<!-- Use this to Make Alumni Section Seperated by position!
     <section class="alumni-section">
         <h2 class="section-title">Lab Alumni</h2>
         
-        <!-- Loop through our newly sorted groups -->
+         Loop through our newly sorted groups
         {Object.entries(groupedAlumni).map(([groupName, members]) => {
             
             // If a group is empty, skip it completely
@@ -172,12 +196,12 @@ alumniMembers.forEach((alumni) => {
                     <h3 class="group-heading">{groupName}</h3>
                     <div class="alumni-directory">
                         
-                        <!-- Map through the members of this specific group -->
+                         Map through the members of this specific group
                         {members.map((alumni) => (
                             <div class="alumni-entry">
                                 <h4>{alumni.name}</h4>
                                 <p class="former-role">{alumni.formerRole}</p>
-                                <!-- <p class="current-position"><em>Currently:</em> {alumni.currentPosition}</p> -->
+                                <p class="current-position"><em>Currently:</em> {alumni.currentPosition}</p>
                             </div>
                         ))}
 
@@ -186,7 +210,7 @@ alumniMembers.forEach((alumni) => {
             )
         })}
     </section>
-
+-->
     {currentMembers.map((member) => (
         <dialog id={member.id} class="member-modal">
             <div class="modal-content">
