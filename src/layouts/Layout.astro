@@ -1,3 +1,11 @@
+---
+export interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -6,7 +14,12 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="generator" content={Astro.generator} />
-        <title>Shabel Lab</title>
+        
+        <!-- This uses the dynamic title passed from your individual pages -->
+        <title>{title}</title>
+
+        <!-- NEW SEO META DESCRIPTION -->
+        <meta name="description" content="The Shabel Lab at UT Southwestern investigates the neural circuits of depression, motivated behavior, and the lateral habenula." />
     </head>
     <body>
         <!-- Header & Navigation -->
