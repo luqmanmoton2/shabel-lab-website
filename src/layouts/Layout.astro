@@ -11,8 +11,6 @@ const { title } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
         <meta name="generator" content={Astro.generator} />
         
         <!-- This uses the dynamic title passed from your individual pages -->
@@ -20,6 +18,14 @@ const { title } = Astro.props;
 
         <!-- NEW SEO META DESCRIPTION -->
         <meta name="description" content="The Shabel Lab at UT Southwestern investigates the neural circuits of depression, motivated behavior, and the lateral habenula." />
+        
+        <!-- REALFAVICONGENERATOR MARKUPS -->
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Shabel Lab" />
+        <link rel="manifest" href="/site.webmanifest" />
     </head>
     <body>
         <!-- Header & Navigation -->
@@ -114,8 +120,6 @@ const { title } = Astro.props;
         align-items: center;
         text-decoration: none;
     }
-
-   
 
     .logo-text {
         font-size: 1.5rem;
