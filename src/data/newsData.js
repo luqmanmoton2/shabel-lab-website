@@ -2,6 +2,21 @@
 
 export const newsUpdates = [
     {
+        date: "August 17th 2026",
+        title: "Preprint #3 out!",
+        snippet: "A habenula-enriched GPCR, GPR151, regulates behavioral sensitivity to inflammation",
+    },
+    {
+        date: "August 17th 2026",
+        title: "Preprint #2 out!",
+        snippet: "Dopaminergic signatures of state and trait-like pessimism in mice",
+    },
+    {
+        date: "August 17th 2026",
+        title: "Preprint #1 out!",
+        snippet: "Evolutionary rise of a synaptic mechanism for creating and diversifying key reinforcement signals",
+    },
+    {
         date: "December 5th 2025",
         title: "Lupita Graduates!",
         snippet: "Congratulations, Dr. Rios, on earning your Ph.D!",
