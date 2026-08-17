@@ -11,11 +11,13 @@ export const newsUpdates = [
         date: "August 17th 2026",
         title: "Preprint #2 out!",
         snippet: "Dopaminergic signatures of state and trait-like pessimism in mice",
+        link: "/publications"
     },
     {
         date: "August 17th 2026",
         title: "Preprint #1 out!",
         snippet: "Evolutionary rise of a synaptic mechanism for creating and diversifying key reinforcement signals",
+        link: "/publications"
     },
     {
         date: "December 5th 2025",
