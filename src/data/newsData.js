@@ -5,6 +5,7 @@ export const newsUpdates = [
         date: "August 17th 2026",
         title: "Preprint #3 out!",
         snippet: "A habenula-enriched GPCR, GPR151, regulates behavioral sensitivity to inflammation",
+        link: "/publications"
     },
     {
         date: "August 17th 2026",
